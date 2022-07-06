@@ -8,3 +8,11 @@ export function signIn(req, res) {
 		res.sendStatus(500);
 	}
 }
+
+export function signUp(req, res) {
+	try {
+		res.status(201).send("Usuário cadastrado com sucesso!");
+	} catch (err) {
+		res.sendStatus(500);
+	}
+}
