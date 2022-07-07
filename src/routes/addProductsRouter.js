@@ -7,4 +7,5 @@ const addProductsRouter = Router();
 
 addProductsRouter.post("/newproduct", newProduct, addProducts);
 
+
 export default addProductsRouter;
