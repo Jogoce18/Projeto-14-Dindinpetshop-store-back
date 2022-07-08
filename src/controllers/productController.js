@@ -1,7 +1,9 @@
 import db from "../databases/mongo.js";
 
 export async function getRacao(req,res){
-    const {params}=req.body;
+
+    const {params}=req.headers;
+
     try {
         const myproducts = await db.collection("products").find(params).toArray();
         res.status(200).send(myproducts);
