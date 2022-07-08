@@ -6,6 +6,7 @@ import homeRouter from "./homeRouter.js";
 
 import searchRouter from "./searchRouter.js";
 
+import doneRouter from "./doneRouter.js";
 
 const router = Router();
 
@@ -16,5 +17,6 @@ router.use(homeRouter);
 
 router.use(searchRouter);
 
+router.use(doneRouter);
 
 export default router;
