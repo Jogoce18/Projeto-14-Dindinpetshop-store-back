@@ -1,14 +1,13 @@
 import db from "../databases/mongo.js";
+import { ObjectId } from "mongodb";
 
 export async function getRacao(req, res) {
 	const { category } = req.headers;
-	console.log(req.headers);
 	try {
 		const myproducts = await db
 			.collection("products")
 			.find({ category: category })
 			.toArray();
-		console.log(myproducts);
 		res.status(200).send(myproducts);
 	} catch (error) {
 		res.sendStatus(500);
@@ -21,7 +20,7 @@ export async function getProductData(req, res) {
 	try {
 		const product = await db
 			.collection("products")
-			.findOne({ id: parseInt(id) });
+			.findOne({ _id: ObjectId(id) });
 		res.status(200).send(product);
 	} catch (error) {
 		res.sendStatus(500);
