@@ -1,4 +1,4 @@
-import db from "../../databases/mongo";
+import db from "../../databases/mongo.js";
 
 export async function saveOrder(req, res, next) {
 	const information = req.body;
